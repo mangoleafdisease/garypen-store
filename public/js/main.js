@@ -4,22 +4,33 @@ let currentProduct = null;
 let selectedVariantIndex = 0;
 let quantity = 1;
 
-// Load products from API (products.json)
+// Load products from products.json (direktang file, hindi API)
 async function loadProducts() {
     try {
+        console.log('Loading products...');
+        // Direktang i-load ang products.json file
         const response = await fetch('/products.json');
+        
         if (response.ok) {
             products = await response.json();
-            console.log('Products loaded:', products.length);
+            console.log('Products loaded successfully:', products.length);
             renderProducts();
         } else {
+            console.error('Response not OK:', response.status);
             throw new Error('Failed to load products');
         }
     } catch (error) {
         console.error('Failed to load products:', error);
-        // Fallback message
+        // Show error message
         const container = document.getElementById('productsGrid');
-        container.innerHTML = '<div style="text-align:center; padding:3rem;"><i class="fas fa-exclamation-triangle" style="font-size:3rem; color:#c53a1f;"></i><p style="margin-top:1rem;">Unable to load products. Please check your connection.</p></div>';
+        container.innerHTML = `
+            <div style="text-align:center; padding:3rem;">
+                <i class="fas fa-exclamation-triangle" style="font-size:3rem; color:#c53a1f;"></i>
+                <p style="margin-top:1rem;">Unable to load products.</p>
+                <p style="font-size:0.9rem; color:#666;">Please check if products.json exists in the root folder.</p>
+                <button onclick="location.reload()" style="margin-top:1rem; padding:10px 20px; background:#c53a1f; color:white; border:none; border-radius:30px; cursor:pointer;">Retry</button>
+            </div>
+        `;
     }
 }
 
@@ -41,9 +52,9 @@ function renderProducts() {
     container.innerHTML = filtered.map(p => `
         <div class="product-card" data-id="${p.id}">
             ${p.category === 'siopao' ? '<div class="badge-promo">Sulit Promo!</div>' : ''}
-            <div class="product-img"><img src="${p.image}" alt="${p.name}" onerror="this.src='https://placehold.co/600x400/FFE0CC/AA5A2C?text=Image+Not+Found'"></div>
+            <div class="product-img"><img src="${p.image}" alt="${p.name}" onerror="this.src='https://placehold.co/600x400/FFE0CC/AA5A2C?text=No+Image'"></div>
             <div class="product-info">
-                <div class="product-title">${p.name}</div>
+                <div class="product-title">${escapeHtml(p.name)}</div>
                 <div class="product-category">${p.category.toUpperCase()}</div>
                 <div class="price">₱${p.price.toFixed(2)}</div>
                 <button class="btn-add view-detail" data-id="${p.id}"><i class="fas fa-eye"></i> View & Order</button>
@@ -82,7 +93,7 @@ function updateModalContent() {
         <div class="modal-gallery">
             <div class="swiper productSwiper" style="width:100%;">
                 <div class="swiper-wrapper">
-                    ${galleryImgs.map(img => `<div class="swiper-slide"><img src="${img}" alt="gallery" onerror="this.src='https://placehold.co/600x400/FFE0CC/AA5A2C?text=Image+Not+Found'"></div>`).join('')}
+                    ${galleryImgs.map(img => `<div class="swiper-slide"><img src="${img}" alt="gallery" onerror="this.src='https://placehold.co/600x400/FFE0CC/AA5A2C?text=No+Image'"></div>`).join('')}
                 </div>
                 <div class="swiper-pagination"></div>
                 <div class="swiper-button-next"></div>
@@ -175,16 +186,6 @@ function addToCart(id, name, price, qty, variantLabel) {
         cart.push({ id, name, price, quantity: qty, variant: variantLabel });
     }
     updateCartUI();
-    
-    // Show feedback
-    const btn = event?.target;
-    if (btn && btn.classList && btn.classList.contains('btn-add')) {
-        const originalText = btn.innerHTML;
-        btn.innerHTML = '<i class="fas fa-check"></i> Added!';
-        setTimeout(() => {
-            btn.innerHTML = originalText;
-        }, 1000);
-    }
 }
 
 // Update cart sidebar
