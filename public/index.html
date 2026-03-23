@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Garypen | Fresh & Frozen Trading</title>
+    <!-- Google Fonts + Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Swiper for product galleries -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="top-bar">
+    <span><i class="fas fa-store"></i> Wholesale & Retail | Dressed Chicken, Pork, Beef, Eggs</span>
+    <span><i class="fas fa-truck"></i> Fresh from the Farm | Sigurado, Barato pa!</span>
+</div>
+
+<div class="navbar">
+    <div class="logo">
+        <h1>GARYPEN</h1>
+        <span>FROZEN PRODUCTS TRADING</span>
+    </div>
+    <div class="nav-links">
+        <a href="#" class="active">HOME</a>
+        <a href="#">PRODUCTS</a>
+        <a href="#">SUKI CARD</a>
+        <div class="cart-icon" id="cartIcon">
+            <i class="fas fa-shopping-basket"></i>
+            <span class="cart-count" id="cartCount">0</span>
+        </div>
+    </div>
+</div>
+
+<div class="hero-section">
+    <h2>WE KNOW YOU DESERVE THE BEST</h2>
+    <p style="font-size:1.1rem; max-width:600px; margin:auto;">Fresh meat • Easy meals • Quality frozen products</p>
+    <div class="search-filter">
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Search products...">
+        </div>
+        <div class="filter-group" id="filterGroup">
+            <div class="filter-chip active" data-cat="all">All</div>
+            <div class="filter-chip" data-cat="chicken">🐔 Chicken</div>
+            <div class="filter-chip" data-cat="pork">🐷 Pork</div>
+            <div class="filter-chip" data-cat="beef">🐮 Beef</div>
+            <div class="filter-chip" data-cat="eggs">🥚 Eggs</div>
+            <div class="filter-chip" data-cat="ice">🧊 Ice</div>
+            <div class="filter-chip" data-cat="siopao">🥟 Siopao/Siomai</div>
+        </div>
+    </div>
+</div>
+
+<div id="productsGrid" class="products-grid"></div>
+
+<!-- Modal for product detail -->
+<div id="productModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-close" id="closeModalBtn">&times;</div>
+        <div class="modal-grid" id="modalDynamicContent"></div>
+    </div>
+</div>
+
+<!-- Cart Sidebar -->
+<div id="cartSidebar" class="cart-sidebar">
+    <div class="cart-header">
+        <span><i class="fas fa-shopping-cart"></i> Your Cart</span>
+        <i class="fas fa-times" id="closeCartBtn" style="cursor:pointer"></i>
+    </div>
+    <div id="cartItemsList" class="cart-items">Cart is empty</div>
+    <div class="cart-total" id="cartTotalAmount">₱0.00</div>
+    <button class="checkout-btn" id="checkoutBtn"><i class="fas fa-credit-card"></i> Checkout</button>
+</div>
+<div id="overlay" class="overlay"></div>
+
+<footer>
+    <p><i class="fas fa-drumstick-bite"></i> GARYPEN FROZEN PRODUCTS TRADING — Dressed Chicken, Pork, Beef, Fresh Eggs, Cube Ice</p>
+    <p>📍 Main: Aras-asan Cagwait, Surigao del Sur | Branches: Tandag, San Miguel, Madrid, Cantilan, Tag-anito, Barobo, Diatagon, Claver, Bislig, Surigao City</p>
+    <p style="margin-top:10px;">✨ Suki Card Registration only ₱100 — earn stamps, get FREE whole chicken! ✨</p>
+    <p>© 2025 Garypen — Presko, Sigurado, Barato pa!</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>

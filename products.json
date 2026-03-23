@@ -1,0 +1,141 @@
+[
+  {
+    "id": 1,
+    "name": "Dressed Whole Chicken",
+    "category": "chicken",
+    "price": 220,
+    "desc": "Presko, sigurado! Fresh from local farms. Ideal for roasting, tinola, or fried chicken.",
+    "image": "./images/1.jpg",
+    "gallery": [
+      "./images/1.jpg",
+      "./images/8.jpg"
+    ],
+    "variants": ["Whole (1.2-1.5kg)", "Whole (1.6-1.9kg)"],
+    "variantPrices": [220, 280]
+  },
+  {
+    "id": 2,
+    "name": "Pork Liempo",
+    "category": "pork",
+    "price": 320,
+    "desc": "Tender, juicy liempo perfect for grilling. Premium quality, locally sourced.",
+    "image": "./images/5.jpg",
+    "gallery": [
+      "./images/9.jpg",
+      "./images/5.jpg"
+    ],
+    "variants": ["500g pack", "1kg pack"],
+    "variantPrices": [180, 320]
+  },
+  {
+    "id": 3,
+    "name": "Pure Beef Meat",
+    "category": "beef",
+    "price": 390,
+    "desc": "Lean & fresh beef, ideal for kaldereta, nilaga, or steak. Guaranteed quality.",
+    "image": "./images/9.jpg",
+    "gallery": [
+      "./images/5.jpg",
+      "./images/9.jpg"
+    ],
+    "variants": ["Tenderloin 500g", "Sirloin 500g"],
+    "variantPrices": [390, 370]
+  },
+  {
+    "id": 4,
+    "name": "Fresh Eggs (Tray)",
+    "category": "eggs",
+    "price": 210,
+    "desc": "Farm-fresh eggs, siguradong lokal, walang halong chemical. Barato pa!",
+    "image": "./images/12.jpg",
+    "gallery": [
+      "./images/12.jpg",
+      "./images/12.jpg"
+    ],
+    "variants": ["30 pcs tray", "60 pcs double tray"],
+    "variantPrices": [210, 410]
+  },
+  {
+    "id": 5,
+    "name": "Pork Asado Siopao",
+    "category": "siopao",
+    "price": 75,
+    "desc": "Sulit na, lamian pa! Authentic Asado filling, soft bun. Ready to steam.",
+    "image": "./images/4.jpg",
+    "gallery": [
+      "./images/4.jpg",
+      "./images/4.jpg"
+    ],
+    "variants": ["1 pc", "3 pcs pack"],
+    "variantPrices": [75, 210]
+  },
+  {
+    "id": 6,
+    "name": "Pork Siomai",
+    "category": "siopao",
+    "price": 120,
+    "desc": "Classic pork siomai, juicy & flavorful. Perfect partner for sawsawan.",
+    "image": "./images/4.jpg",
+    "gallery": [
+      "./images/4.jpg",
+      "./images/4.jpg"
+    ],
+    "variants": ["10 pcs", "20 pcs"],
+    "variantPrices": [120, 230]
+  },
+  {
+    "id": 7,
+    "name": "Cube Ice",
+    "category": "ice",
+    "price": 45,
+    "desc": "Pure & crystal clear ice. Perfect for drinks & coolers. Bulk & bagged ice available!",
+    "image": "./images/2.jpg",
+    "gallery": [
+      "./images/2.jpg",
+      "./images/2.jpg"
+    ],
+    "variants": ["Small bag", "Large bulk bag"],
+    "variantPrices": [45, 85]
+  },
+  {
+    "id": 8,
+    "name": "Chicken Wings",
+    "category": "chicken",
+    "price": 190,
+    "desc": "Juicy wings, perfect for frying or adobo. Fresh cut-ups available.",
+    "image": "./images/8.jpg",
+    "gallery": [
+      "./images/8.jpg",
+      "./images/8.jpg"
+    ],
+    "variants": ["500g pack", "1kg pack"],
+    "variantPrices": [190, 360]
+  },
+  {
+    "id": 9,
+    "name": "Pork Chop",
+    "category": "pork",
+    "price": 260,
+    "desc": "Thick-cut pork chop, tender and flavorful. Best for frying or grilling.",
+    "image": "./images/5.jpg",
+    "gallery": [
+      "./images/5.jpg",
+      "./images/5.jpg"
+    ],
+    "variants": ["2 pcs pack", "4 pcs pack"],
+    "variantPrices": [260, 500]
+  },
+  {
+    "id": 10,
+    "name": "Fresh Eggs (per piece)",
+    "category": "eggs",
+    "price": 9,
+    "desc": "Per piece farm fresh eggs. Sigurado ka na, barato pa!",
+    "image": "./images/12.jpg",
+    "gallery": [
+      "./images/12.jpg"
+    ],
+    "variants": ["per piece", "10 pieces"],
+    "variantPrices": [9, 85]
+  }
+]
